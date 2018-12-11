@@ -9,7 +9,6 @@ class App extends React.Component {
     onSearchSubmit = (query) => {
         youtubeApi.get('/search', {
             params: {
-                part: 'snippet',
                 q: query
             }
         }).then((response) => {
