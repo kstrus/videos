@@ -7,7 +7,13 @@ class VideoList extends React.Component {
         const { videos, onVideoSelect } = this.props;
 
         const list = videos.map((video) => {
-            return <VideoTile video={video} onVideoSelect={onVideoSelect}/>;
+            return (
+                <VideoTile
+                    video={video}
+                    onVideoSelect={onVideoSelect}
+                    key={video.id.videoId}
+                />
+            );
         });
 
         return <div className="video_list">{list}</div>;
@@ -15,8 +21,8 @@ class VideoList extends React.Component {
 }
 
 VideoList.propTypes = {
-    videos: PropTypes.array.isRequired,
-    onVideoSelect: PropTypes.func.isRequired
+    videos: PropTypes.array,
+    onVideoSelect: PropTypes.func
 };
 
 export default VideoList;

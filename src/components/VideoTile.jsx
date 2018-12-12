@@ -8,7 +8,7 @@ class VideoTile extends React.Component {
 
         return (
             <div className="video_tile" onClick={() => onVideoSelect(this.props.video)}>
-                <img className="image" src={video.snippet.thumbnails.medium.url} alt='Video thumbnail'/>
+                <img className="image" src={video.snippet.thumbnails.medium.url} alt={video.snippet.title}/>
                 <div className="title">{video.snippet.title}</div>
             </div>
         );
@@ -16,8 +16,8 @@ class VideoTile extends React.Component {
 }
 
 VideoTile.propTypes = {
-    video: PropTypes.object.isRequired,
-    onVideoSelect: PropTypes.func.isRequired
+    video: PropTypes.object,
+    onVideoSelect: PropTypes.func
 };
 
 export default VideoTile;
